@@ -1,21 +1,508 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+#include <cstdlib>
+#include <iostream>
+#include <windows.h>
+#include <conio.h>
+#include <string.h>
+#include "stdio.h"
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+using namespace std;
 
-# Executables
-*.exe
-*.out
-*.app
+// CABECERA DE PROCEDIMIENTOS Y FUNCIONES
+void restricciones();
+void calculos1();
+void calculos2();
+void calculos3();
+
+//VARIABLES UTILIZADAS
+int contador1=0;
+int anos_restados=0;
+int suma_dias_meses=0;
+
+int total1;
+int total2;
+int total3;
+int total4;
+int total_vivido;
+int total_biciesto1;
+int total_biciesto2;
+
+int dia_actual;
+int mes_actual;
+int ano_actual;
+int dia_nacimiento;
+int mes_nacimiento;
+int ano_nacimiento;
+
+int dias_enero=30;//enero
+int dias_febrero=28;//febrero
+int dias_marzo=31;//marzo
+int dias_abril=30;//abril
+int dias_mayo=31;//mayo
+int dias_junio=30;//junio
+int dias_julio=31;//julio
+int dias_agosto=31;//agosto
+int dias_setiembre=30;//setiembre
+int dias_octubre=31;//octubre
+int dias_noviembre=30;//noviembre
+int dias_diciembre=31;//diciembre
+
+int main()
+ {
+ 	cout << " CUANTOS DIAS HAS VIVIDO  \n\n"<< endl;
+ 	cout << " Digite Fecha Actual \n"<< endl;
+ 	cout << " Dia Actual :"<< endl;
+ 	cin >> dia_actual;
+ 	cout << " \nMes Actual :"<< endl;
+ 	cin >> mes_actual;
+ 	cout << " \nAyo Actual :"<< endl;
+ 	cin >> ano_actual;
+ 	
+ 	cout << " \nDigite su Fecha de Nacimiento \n"<< endl;
+ 	cout << " Dia Nacimiento :"<< endl;
+ 	cin >> dia_nacimiento;
+ 	cout << " \nMes Nacimiento :"<< endl;
+ 	cin >> mes_nacimiento;
+ 	cout << " \nAyo Nacimiento :"<< endl;
+ 	cin >> ano_nacimiento;
+ 	cout << " \n________________________________________________________________"<< endl;
+
+ 	restricciones();
+	return 0;
+}
+
+// IMPLEMENTACIÓN DE PROCEDIMIENTOS Y FUNCIONES
+void restricciones()
+{
+	if (dia_actual<=31 && dia_actual>=1)
+	{
+		if (mes_actual<=12 && mes_actual>=1)
+		{
+			if (ano_actual<2100 && ano_actual>=0)
+			{
+				
+				
+				if (dia_nacimiento<=31 && dia_nacimiento>=1)
+				{
+					if (mes_nacimiento<=12 && mes_nacimiento>=1)
+					{
+						if (ano_nacimiento<2100 && ano_nacimiento>=0)
+						{
+							calculos1();
+						}
+					}
+				}
+				
+			
+			}
+		}
+	}
+
+
+}
+
+void calculos1()
+{
+	suma_dias_meses = dias_enero+dias_febrero+dias_marzo+dias_abril+dias_mayo+dias_junio+
+			       dias_julio+dias_agosto+dias_setiembre+dias_octubre+dias_noviembre+dias_diciembre;
+		       
+	anos_restados = ano_actual - ano_nacimiento;
+	anos_restados = anos_restados * suma_dias_meses;
+
+	//cout << "\n\nRealizando Calculos "<< anos_restados<< "\n\n"<< endl;
+	
+	switch (mes_actual)
+	{
+	case 1:  //30
+	total1= anos_restados+dias_enero; 
+	switch (dia_actual)
+	{
+	case 1: total2= total1-29; break;case 2: total2=total1-28; break;case 3: total2=total1-27; break;case 4: total2=total1-26; break;
+	case 5: total2=total1-25; break;case 6: total2= total1-24; break;case 7: total2=total1-23; break;case 8: total2=total1-22; break;
+	case 9: total2=total1-21; break;case 10: total2=total1-20; break;case 11: total2=total1-19; break;case 12: total2=total1-18; break;
+	case 13: total2=total1-17; break;case 14: total2=total1-16; break;case 15: total2=total1-15; break;case 16: total2=total1-14; break;
+    case 17: total2=total1-13; break;case 18: total2=total1-12; break;case 19: total2=total1-11; break;case 20: total2=total1-10; break;
+	case 21: total2=total1-9; break;case 22: total2=total1-8; break;case 23: total2=total1-7; break;case 24: total2=total1-6; break;
+	case 25: total2=total1-5; break;case 26: total2=total1-4; break;case 27: total2=total1-3; break;case 28: total2=total1-2; break;
+	case 29: total2=total1-1; break;case 30: total2=total1-0; break;
+	}
+	break;
+	
+	
+	case 2: //28
+	 total1= anos_restados+dias_enero+dias_febrero;  
+	 switch (dia_actual)
+	{
+	case 1: total2=total1-27; break;case 2: total2=total1-26; break;case 3: total2=total1-25; break;case 4: total2=total1-24; break;case 5: total2=total1-23; break;
+	case 6: total2=total1-22; break;case 7: total2=total1-21; break;case 8: total2=total1-20; break;case 9: total2=total1-19; break;case 10: total2=total1-18; break;
+	case 11: total2=total1-17; break;case 12: total2=total1-16; break;case 13: total2=total1-15; break;case 14: total2=total1-14; break;case 15: total2=total1-13; break;
+	case 16: total2=total1-12; break;case 17: total2=total1-11; break;case 18: total2=total1-10; break;case 19: total2=total1-9; break;case 20: total2=total1-8; break;
+	case 21: total2=total1-7; break;case 22: total2=total1-6; break;case 23: total2=total1-5; break;case 24: total2=total1-4; break;case 25: total2=total1-3; break;
+	case 26: total2=total1-2; break;case 27: total2=total1-1; break;case 28: total2=total1-0; break;
+	}
+	 break;
+	
+	case 3: //31
+	 total1= anos_restados+dias_enero+dias_febrero+dias_marzo;  
+	     switch (dia_actual)
+	{
+	case 1: total2=total1-30; break;case 2: total2=total1-29; break;case 3: total2=total1-28; break;case 4: total2=total1-27; break;
+	case 5: total2=total1-26; break;case 6: total2=total1-25; break;case 7: total2=total1-24; break;case 8: total2=total1-23; break;
+	case 9: total2=total1-22; break;case 10: total2=total1-21; break;case 11: total2=total1-20; break;case 12: total2=total1-19; break;
+	case 13: total2=total1-18; break;case 14: total2=total1-17; break;case 15: total2=total1-16; break;case 16: total2=total1-15; break;
+	case 17: total2=total1-14; break;case 18: total2=total1-13; break;case 19: total2=total1-12; break;case 20: total2=total1-11; break;
+	case 21: total2=total1-10; break;case 22: total2=total1-9; break;case 23: total2=total1-8; break;case 24: total2=total1-7; break;
+	case 25: total2=total1-6; break;case 26: total2=total1-5; break;case 27: total2=total1-4; break;case 28: total2=total1-3; break;
+	case 29: total2=total1-2; break;case 30: total2=total1-1; break;case 31: total2=total1-0; break;
+	}
+	 break;
+	 
+	case 4://30
+	  total1= anos_restados+dias_enero+dias_febrero+dias_marzo+dias_abril;
+	  switch (dia_actual)
+	{
+	case 1: total2= total1-29; break;case 2: total2=total1-28; break;case 3: total2=total1-27; break;case 4: total2=total1-26; break;
+	case 5: total2=total1-25; break;case 6: total2= total1-24; break;case 7: total2=total1-23; break;case 8: total2=total1-22; break;
+	case 9: total2=total1-21; break;case 10: total2=total1-20; break;case 11: total2=total1-19; break;case 12: total2=total1-18; break;
+	case 13: total2=total1-17; break;case 14: total2=total1-16; break;case 15: total2=total1-15; break;case 16: total2=total1-14; break;
+    case 17: total2=total1-13; break;case 18: total2=total1-12; break;case 19: total2=total1-11; break;case 20: total2=total1-10; break;
+	case 21: total2=total1-9; break;case 22: total2=total1-8; break;case 23: total2=total1-7; break;case 24: total2=total1-6; break;
+	case 25: total2=total1-5; break;case 26: total2=total1-4; break;case 27: total2=total1-3; break;case 28: total2=total1-2; break;
+	case 29: total2=total1-1; break;case 30: total2=total1-0; break;
+	}
+	break;
+
+	case 5: //31
+	 total1= anos_restados+dias_enero+dias_febrero+dias_marzo+dias_abril+dias_mayo;  
+	 switch (dia_actual)
+	{
+	case 1: total2=total1-30; break;case 2: total2=total1-29; break;case 3: total2=total1-28; break;case 4: total2=total1-27; break;
+	case 5: total2=total1-26; break;case 6: total2=total1-25; break;case 7: total2=total1-24; break;case 8: total2=total1-23; break;
+	case 9: total2=total1-22; break;case 10: total2=total1-21; break;case 11: total2=total1-20; break;case 12: total2=total1-19; break;
+	case 13: total2=total1-18; break;case 14: total2=total1-17; break;case 15: total2=total1-16; break;case 16: total2=total1-15; break;
+	case 17: total2=total1-14; break;case 18: total2=total1-13; break;case 19: total2=total1-12; break;case 20: total2=total1-11; break;
+	case 21: total2=total1-10; break;case 22: total2=total1-9; break;case 23: total2=total1-8; break;case 24: total2=total1-7; break;
+	case 25: total2=total1-6; break;case 26: total2=total1-5; break;case 27: total2=total1-4; break;case 28: total2=total1-3; break;
+	case 29: total2=total1-2; break;case 30: total2=total1-1; break;case 31: total2=total1-0; break;
+	}
+	break;
+	
+	case 6://30
+	  total1= anos_restados+dias_enero+dias_febrero+dias_marzo+dias_abril+dias_mayo+dias_junio; 
+	  	switch (dia_actual)
+	{
+	case 1: total2= total1-29; break;case 2: total2=total1-28; break;case 3: total2=total1-27; break;case 4: total2=total1-26; break;
+	case 5: total2=total1-25; break;case 6: total2= total1-24; break;case 7: total2=total1-23; break;case 8: total2=total1-22; break;
+	case 9: total2=total1-21; break;case 10: total2=total1-20; break;case 11: total2=total1-19; break;case 12: total2=total1-18; break;
+	case 13: total2=total1-17; break;case 14: total2=total1-16; break;case 15: total2=total1-15; break;case 16: total2=total1-14; break;
+    case 17: total2=total1-13; break;case 18: total2=total1-12; break;case 19: total2=total1-11; break;case 20: total2=total1-10; break;
+	case 21: total2=total1-9; break;case 22: total2=total1-8; break;case 23: total2=total1-7; break;case 24: total2=total1-6; break;
+	case 25: total2=total1-5; break;case 26: total2=total1-4; break;case 27: total2=total1-3; break;case 28: total2=total1-2; break;
+	case 29: total2=total1-1; break;case 30: total2=total1-0; break;
+	}
+    break;
+	
+	case 7: //31
+	 total1= anos_restados+dias_enero+dias_febrero+dias_marzo+dias_abril+dias_mayo+dias_junio+
+			       dias_julio;  
+		switch (dia_actual)
+	{
+	case 1: total2=total1-30; break;case 2: total2=total1-29; break;case 3: total2=total1-28; break;case 4: total2=total1-27; break;
+	case 5: total2=total1-26; break;case 6: total2=total1-25; break;case 7: total2=total1-24; break;case 8: total2=total1-23; break;
+	case 9: total2=total1-22; break;case 10: total2=total1-21; break;case 11: total2=total1-20; break;case 12: total2=total1-19; break;
+	case 13: total2=total1-18; break;case 14: total2=total1-17; break;case 15: total2=total1-16; break;case 16: total2=total1-15; break;
+	case 17: total2=total1-14; break;case 18: total2=total1-13; break;case 19: total2=total1-12; break;case 20: total2=total1-11; break;
+	case 21: total2=total1-10; break;case 22: total2=total1-9; break;case 23: total2=total1-8; break;case 24: total2=total1-7; break;
+	case 25: total2=total1-6; break;case 26: total2=total1-5; break;case 27: total2=total1-4; break;case 28: total2=total1-3; break;
+	case 29: total2=total1-2; break;case 30: total2=total1-1; break;case 31: total2=total1-0; break;
+	}		   
+	break;
+			       	       
+	case 8: //31
+	 total1= anos_restados+dias_enero+dias_febrero+dias_marzo+dias_abril+dias_mayo+dias_junio+
+			       dias_julio+dias_agosto;  
+	switch (dia_actual)
+	{
+	case 1: total2=total1-30; break;case 2: total2=total1-29; break;case 3: total2=total1-28; break;case 4: total2=total1-27; break;
+	case 5: total2=total1-26; break;case 6: total2=total1-25; break;case 7: total2=total1-24; break;case 8: total2=total1-23; break;
+	case 9: total2=total1-22; break;case 10: total2=total1-21; break;case 11: total2=total1-20; break;case 12: total2=total1-19; break;
+	case 13: total2=total1-18; break;case 14: total2=total1-17; break;case 15: total2=total1-16; break;case 16: total2=total1-15; break;
+	case 17: total2=total1-14; break;case 18: total2=total1-13; break;case 19: total2=total1-12; break;case 20: total2=total1-11; break;
+	case 21: total2=total1-10; break;case 22: total2=total1-9; break;case 23: total2=total1-8; break;case 24: total2=total1-7; break;
+	case 25: total2=total1-6; break;case 26: total2=total1-5; break;case 27: total2=total1-4; break;case 28: total2=total1-3; break;
+	case 29: total2=total1-2; break;case 30: total2=total1-1; break;case 31: total2=total1-0; break;
+	}   
+	break;
+			       	       
+	case 9:  //30
+	total1= anos_restados+dias_enero+dias_febrero+dias_marzo+dias_abril+dias_mayo+dias_junio+
+			       dias_julio+dias_agosto+dias_setiembre;  
+	switch (dia_actual)
+	{
+	case 1: total2= total1-29; break;case 2: total2=total1-28; break;case 3: total2=total1-27; break;case 4: total2=total1-26; break;
+	case 5: total2=total1-25; break;case 6: total2= total1-24; break;case 7: total2=total1-23; break;case 8: total2=total1-22; break;
+	case 9: total2=total1-21; break;case 10: total2=total1-20; break;case 11: total2=total1-19; break;case 12: total2=total1-18; break;
+	case 13: total2=total1-17; break;case 14: total2=total1-16; break;case 15: total2=total1-15; break;case 16: total2=total1-14; break;
+    case 17: total2=total1-13; break;case 18: total2=total1-12; break;case 19: total2=total1-11; break;case 20: total2=total1-10; break;
+	case 21: total2=total1-9; break;case 22: total2=total1-8; break;case 23: total2=total1-7; break;case 24: total2=total1-6; break;
+	case 25: total2=total1-5; break;case 26: total2=total1-4; break;case 27: total2=total1-3; break;case 28: total2=total1-2; break;
+	case 29: total2=total1-1; break;case 30: total2=total1-0; break;
+	}			   
+	break;
+			       	       
+	case 10: //31
+	total1= anos_restados+dias_enero+dias_febrero+dias_marzo+dias_abril+dias_mayo+dias_junio+
+			       dias_julio+dias_agosto+dias_setiembre+dias_octubre; 
+	switch (dia_actual)
+	{
+	case 1: total2=total1-30; break;case 2: total2=total1-29; break;case 3: total2=total1-28; break;case 4: total2=total1-27; break;
+	case 5: total2=total1-26; break;case 6: total2=total1-25; break;case 7: total2=total1-24; break;case 8: total2=total1-23; break;
+	case 9: total2=total1-22; break;case 10: total2=total1-21; break;case 11: total2=total1-20; break;case 12: total2=total1-19; break;
+	case 13: total2=total1-18; break;case 14: total2=total1-17; break;case 15: total2=total1-16; break;case 16: total2=total1-15; break;
+	case 17: total2=total1-14; break;case 18: total2=total1-13; break;case 19: total2=total1-12; break;case 20: total2=total1-11; break;
+	case 21: total2=total1-10; break;case 22: total2=total1-9; break;case 23: total2=total1-8; break;case 24: total2=total1-7; break;
+	case 25: total2=total1-6; break;case 26: total2=total1-5; break;case 27: total2=total1-4; break;case 28: total2=total1-3; break;
+	case 29: total2=total1-2; break;case 30: total2=total1-1; break;case 31: total2=total1-0; break;
+	} 			   
+	break;
+			       
+			       
+			       
+	case 11://30
+	 total1= anos_restados+dias_enero+dias_febrero+dias_marzo+dias_abril+dias_mayo+dias_junio+
+			       dias_julio+dias_agosto+dias_setiembre+dias_octubre+dias_noviembre;  
+	switch (dia_actual)
+	{
+	case 1: total2= total1-29; break;case 2: total2=total1-28; break;case 3: total2=total1-27; break;case 4: total2=total1-26; break;
+	case 5: total2=total1-25; break;case 6: total2= total1-24; break;case 7: total2=total1-23; break;case 8: total2=total1-22; break;
+	case 9: total2=total1-21; break;case 10: total2=total1-20; break;case 11: total2=total1-19; break;case 12: total2=total1-18; break;
+	case 13: total2=total1-17; break;case 14: total2=total1-16; break;case 15: total2=total1-15; break;case 16: total2=total1-14; break;
+    case 17: total2=total1-13; break;case 18: total2=total1-12; break;case 19: total2=total1-11; break;case 20: total2=total1-10; break;
+	case 21: total2=total1-9; break;case 22: total2=total1-8; break;case 23: total2=total1-7; break;case 24: total2=total1-6; break;
+	case 25: total2=total1-5; break;case 26: total2=total1-4; break;case 27: total2=total1-3; break;case 28: total2=total1-2; break;
+	case 29: total2=total1-1; break;case 30: total2=total1-0; break;
+	}			   
+	break;
+			       
+			       
+			       
+	case 12: //31
+	total1= anos_restados+dias_enero+dias_febrero+dias_marzo+dias_abril+dias_mayo+dias_junio+
+			       dias_julio+dias_agosto+dias_setiembre+dias_octubre+dias_noviembre+dias_diciembre;  
+	switch (dia_actual)
+	{
+	case 1: total2=total1-30; break;case 2: total2=total1-29; break;case 3: total2=total1-28; break;case 4: total2=total1-27; break;
+	case 5: total2=total1-26; break;case 6: total2=total1-25; break;case 7: total2=total1-24; break;case 8: total2=total1-23; break;
+	case 9: total2=total1-22; break;case 10: total2=total1-21; break;case 11: total2=total1-20; break;case 12: total2=total1-19; break;
+	case 13: total2=total1-18; break;case 14: total2=total1-17; break;case 15: total2=total1-16; break;case 16: total2=total1-15; break;
+	case 17: total2=total1-14; break;case 18: total2=total1-13; break;case 19: total2=total1-12; break;case 20: total2=total1-11; break;
+	case 21: total2=total1-10; break;case 22: total2=total1-9; break;case 23: total2=total1-8; break;case 24: total2=total1-7; break;
+	case 25: total2=total1-6; break;case 26: total2=total1-5; break;case 27: total2=total1-4; break;case 28: total2=total1-3; break;
+	case 29: total2=total1-2; break;case 30: total2=total1-1; break;case 31: total2=total1-0; break;
+	} 			   
+	break;				
+	}
+	//cout << "Realizando Calculos "<< total1<< "\n\n"<< endl;
+    //cout << "Realizando Calculos "<< total2<< "\n\n"<< endl;
+    
+calculos2();
+
+}
+void calculos2()
+{
+	switch (mes_nacimiento)
+	{
+	case 1:	//30
+	total3 = total2-dias_enero;	 
+	switch (dia_nacimiento)
+	{
+	case 1: total4= total3+29; break;case 2: total4=total3+28; break;case 3: total4=total3+27; break;case 4: total4=total3+26; break;
+	case 5: total4=total3+25; break;case 6: total4= total3+24; break;case 7: total4=total3+23; break;case 8: total4=total3+22; break;
+	case 9: total4=total3+21; break;case 10: total4=total3+20; break;case 11: total4=total3+19; break;case 12: total4=total3+18; break;
+	case 13: total4=total3+17; break;case 14: total4=total3+16; break;case 15: total4=total3+15; break;case 16: total4=total3+14; break;
+    case 17: total4=total3+13; break;case 18: total4=total3+12; break;case 19: total4=total3+11; break;case 20: total4=total3+10; break;
+	case 21: total4=total3+9; break;case 22: total4=total3+8; break;case 23: total4=total3+7; break;case 24: total4=total3+6; break;
+	case 25: total4=total3+5; break;case 26: total4=total3+4; break;case 27: total4=total3+3; break;case 28: total4=total3+2; break;
+	case 29: total4=total3+1; break;case 30: total4=total3+0; break;
+	}   
+	break;
+	
+	case 2: //28
+	total3 = total2-dias_enero-dias_febrero;	
+	switch (dia_nacimiento)
+	{
+	case 1: total4=total3+27; break;case 2: total4=total3+26; break;case 3: total4=total3+25; break;case 4: total4=total3+24; break;case 5: total4=total3+23; break;
+	case 6: total4=total3+22; break;case 7: total4=total3+21; break;case 8: total4=total3+20; break;case 9: total4=total3+19; break;case 10: total4=total3+18; break;
+	case 11: total4=total3+17; break;case 12: total4=total3+16; break;case 13: total4=total3+15; break;case 14: total4=total3+14; break;case 15: total4=total3+13; break;
+	case 16: total4=total3+12; break;case 17: total4=total3+11; break;case 18: total4=total3+10; break;case 19: total4=total3+9; break;case 20: total4=total3+8; break;
+	case 21: total4=total3+7; break;case 22: total4=total3+6; break;case 23: total4=total3+5; break;case 24: total4=total3+4; break;case 25: total4=total3+3; break;
+	case 26: total4=total3+2; break;case 27: total4=total3+1; break;case 28: total4=total3+0; break;
+	}
+	break;
+	
+	case 3: //31		
+	total3 = total2-dias_enero-dias_febrero-dias_abril;
+	     switch (dia_nacimiento)
+	{
+	case 1: total4=total3+30; break;case 2: total4=total3+29; break;case 3: total4=total3+28; break;case 4: total4=total3+27; break;
+	case 5: total4=total3+26; break;case 6: total4=total3+25; break;case 7: total4=total3+24; break;case 8: total4=total3+23; break;
+	case 9: total4=total3+22; break;case 10: total4=total3+21; break;case 11: total4=total3+20; break;case 12: total4=total3+19; break;
+	case 13: total4=total3+18; break;case 14: total4=total3+17; break;case 15: total4=total3+16; break;case 16: total4=total3+15; break;
+	case 17: total4=total3+14; break;case 18: total4=total3+13; break;case 19: total4=total3+12; break;case 20: total4=total3+11; break;
+	case 21: total4=total3+10; break;case 22: total4=total3+9; break;case 23: total4=total3+8; break;case 24: total4=total3+7; break;
+	case 25: total4=total3+6; break;case 26: total4=total3+5; break;case 27: total4=total3+4; break;case 28: total4=total3+3; break;
+	case 29: total4=total3+2; break;case 30: total4=total3+1; break;case 31: total4=total3+0; break;
+	}
+	break;
+	
+	case 4: //30
+	total3 = total2-dias_enero-dias_febrero-dias_abril-dias_marzo;
+	switch (dia_nacimiento)
+	{
+	case 1: total4= total3+29; break;case 2: total4=total3+28; break;case 3: total4=total3+27; break;case 4: total4=total3+26; break;
+	case 5: total4=total3+25; break;case 6: total4= total3+24; break;case 7: total4=total3+23; break;case 8: total4=total3+22; break;
+	case 9: total4=total3+21; break;case 10: total4=total3+20; break;case 11: total4=total3+19; break;case 12: total4=total3+18; break;
+	case 13: total4=total3+17; break;case 14: total4=total3+16; break;case 15: total4=total3+15; break;case 16: total4=total3+14; break;
+    case 17: total4=total3+13; break;case 18: total4=total3+12; break;case 19: total4=total3+11; break;case 20: total4=total3+10; break;
+	case 21: total4=total3+9; break;case 22: total4=total3+8; break;case 23: total4=total3+7; break;case 24: total4=total3+6; break;
+	case 25: total4=total3+5; break;case 26: total4=total3+4; break;case 27: total4=total3+3; break;case 28: total4=total3+2; break;
+	case 29: total4=total3+1; break;case 30: total4=total3+0; break;
+	} 		
+	break;
+	
+	case 5: //31
+	total3 = total2-dias_enero-dias_febrero-dias_abril-dias_marzo-dias_mayo;
+		     switch (dia_nacimiento)
+	{
+	case 1: total4=total3+30; break;case 2: total4=total3+29; break;case 3: total4=total3+28; break;case 4: total4=total3+27; break;
+	case 5: total4=total3+26; break;case 6: total4=total3+25; break;case 7: total4=total3+24; break;case 8: total4=total3+23; break;
+	case 9: total4=total3+22; break;case 10: total4=total3+21; break;case 11: total4=total3+20; break;case 12: total4=total3+19; break;
+	case 13: total4=total3+18; break;case 14: total4=total3+17; break;case 15: total4=total3+16; break;case 16: total4=total3+15; break;
+	case 17: total4=total3+14; break;case 18: total4=total3+13; break;case 19: total4=total3+12; break;case 20: total4=total3+11; break;
+	case 21: total4=total3+10; break;case 22: total4=total3+9; break;case 23: total4=total3+8; break;case 24: total4=total3+7; break;
+	case 25: total4=total3+6; break;case 26: total4=total3+5; break;case 27: total4=total3+4; break;case 28: total4=total3+3; break;
+	case 29: total4=total3+2; break;case 30: total4=total3+1; break;case 31: total4=total3+0; break;
+	}			
+	break;
+	
+	case 6: //30
+	total3 = total2-dias_enero-dias_febrero-dias_abril-dias_marzo-dias_mayo-dias_junio;	
+	switch (dia_nacimiento)
+	{
+	case 1: total4= total3+29; break;case 2: total4=total3+28; break;case 3: total4=total3+27; break;case 4: total4=total3+26; break;
+	case 5: total4=total3+25; break;case 6: total4= total3+24; break;case 7: total4=total3+23; break;case 8: total4=total3+22; break;
+	case 9: total4=total3+21; break;case 10: total4=total3+20; break;case 11: total4=total3+19; break;case 12: total4=total3+18; break;
+	case 13: total4=total3+17; break;case 14: total4=total3+16; break;case 15: total4=total3+15; break;case 16: total4=total3+14; break;
+    case 17: total4=total3+13; break;case 18: total4=total3+12; break;case 19: total4=total3+11; break;case 20: total4=total3+10; break;
+	case 21: total4=total3+9; break;case 22: total4=total3+8; break;case 23: total4=total3+7; break;case 24: total4=total3+6; break;
+	case 25: total4=total3+5; break;case 26: total4=total3+4; break;case 27: total4=total3+3; break;case 28: total4=total3+2; break;
+	case 29: total4=total3+1; break;case 30: total4=total3+0; break;
+	} 	
+	break;
+	
+	case 7:	//31
+	total3 = total2-dias_enero-dias_febrero-dias_abril-dias_marzo-dias_mayo-dias_junio-dias_julio;	
+		     switch (dia_nacimiento)
+	{
+	case 1: total4=total3+30; break;case 2: total4=total3+29; break;case 3: total4=total3+28; break;case 4: total4=total3+27; break;
+	case 5: total4=total3+26; break;case 6: total4=total3+25; break;case 7: total4=total3+24; break;case 8: total4=total3+23; break;
+	case 9: total4=total3+22; break;case 10: total4=total3+21; break;case 11: total4=total3+20; break;case 12: total4=total3+19; break;
+	case 13: total4=total3+18; break;case 14: total4=total3+17; break;case 15: total4=total3+16; break;case 16: total4=total3+15; break;
+	case 17: total4=total3+14; break;case 18: total4=total3+13; break;case 19: total4=total3+12; break;case 20: total4=total3+11; break;
+	case 21: total4=total3+10; break;case 22: total4=total3+9; break;case 23: total4=total3+8; break;case 24: total4=total3+7; break;
+	case 25: total4=total3+6; break;case 26: total4=total3+5; break;case 27: total4=total3+4; break;case 28: total4=total3+3; break;
+	case 29: total4=total3+2; break;case 30: total4=total3+1; break;case 31: total4=total3+0; break;
+	}	    
+	break;
+	
+	case 8:	//31
+	total3 = total2-dias_enero-dias_febrero-dias_abril-dias_marzo-dias_mayo-dias_junio-dias_julio-dias_agosto;
+		     switch (dia_nacimiento)
+	{
+	case 1: total4=total3+30; break;case 2: total4=total3+29; break;case 3: total4=total3+28; break;case 4: total4=total3+27; break;
+	case 5: total4=total3+26; break;case 6: total4=total3+25; break;case 7: total4=total3+24; break;case 8: total4=total3+23; break;
+	case 9: total4=total3+22; break;case 10: total4=total3+21; break;case 11: total4=total3+20; break;case 12: total4=total3+19; break;
+	case 13: total4=total3+18; break;case 14: total4=total3+17; break;case 15: total4=total3+16; break;case 16: total4=total3+15; break;
+	case 17: total4=total3+14; break;case 18: total4=total3+13; break;case 19: total4=total3+12; break;case 20: total4=total3+11; break;
+	case 21: total4=total3+10; break;case 22: total4=total3+9; break;case 23: total4=total3+8; break;case 24: total4=total3+7; break;
+	case 25: total4=total3+6; break;case 26: total4=total3+5; break;case 27: total4=total3+4; break;case 28: total4=total3+3; break;
+	case 29: total4=total3+2; break;case 30: total4=total3+1; break;case 31: total4=total3+0; break;
+	}	 	 	
+	break;
+	
+	case 9:	//30
+	total3 = total2-dias_enero-dias_febrero-dias_abril-dias_marzo-dias_mayo-dias_junio-dias_julio-dias_agosto-dias_setiembre;
+	switch (dia_nacimiento)
+	{
+	case 1: total4= total3+29; break;case 2: total4=total3+28; break;case 3: total4=total3+27; break;case 4: total4=total3+26; break;
+	case 5: total4=total3+25; break;case 6: total4= total3+24; break;case 7: total4=total3+23; break;case 8: total4=total3+22; break;
+	case 9: total4=total3+21; break;case 10: total4=total3+20; break;case 11: total4=total3+19; break;case 12: total4=total3+18; break;
+	case 13: total4=total3+17; break;case 14: total4=total3+16; break;case 15: total4=total3+15; break;case 16: total4=total3+14; break;
+    case 17: total4=total3+13; break;case 18: total4=total3+12; break;case 19: total4=total3+11; break;case 20: total4=total3+10; break;
+	case 21: total4=total3+9; break;case 22: total4=total3+8; break;case 23: total4=total3+7; break;case 24: total4=total3+6; break;
+	case 25: total4=total3+5; break;case 26: total4=total3+4; break;case 27: total4=total3+3; break;case 28: total4=total3+2; break;
+	case 29: total4=total3+1; break;case 30: total4=total3+0; break;
+	} 
+	break;
+	
+	case 10://31
+	total3 = total2-dias_enero-dias_febrero-dias_abril-dias_marzo-dias_mayo-dias_junio-dias_julio-dias_agosto-dias_setiembre-dias_octubre;	    		
+		     switch (dia_nacimiento)
+	{
+	case 1: total4=total3+30; break;case 2: total4=total3+29; break;case 3: total4=total3+28; break;case 4: total4=total3+27; break;
+	case 5: total4=total3+26; break;case 6: total4=total3+25; break;case 7: total4=total3+24; break;case 8: total4=total3+23; break;
+	case 9: total4=total3+22; break;case 10: total4=total3+21; break;case 11: total4=total3+20; break;case 12: total4=total3+19; break;
+	case 13: total4=total3+18; break;case 14: total4=total3+17; break;case 15: total4=total3+16; break;case 16: total4=total3+15; break;
+	case 17: total4=total3+14; break;case 18: total4=total3+13; break;case 19: total4=total3+12; break;case 20: total4=total3+11; break;
+	case 21: total4=total3+10; break;case 22: total4=total3+9; break;case 23: total4=total3+8; break;case 24: total4=total3+7; break;
+	case 25: total4=total3+6; break;case 26: total4=total3+5; break;case 27: total4=total3+4; break;case 28: total4=total3+3; break;
+	case 29: total4=total3+2; break;case 30: total4=total3+1; break;case 31: total4=total3+0; break;
+	}
+	break;
+	
+	case 11://30
+	total3 = total2-dias_enero-dias_febrero-dias_abril-dias_marzo-dias_mayo-dias_junio-dias_julio-dias_agosto-dias_setiembre-dias_octubre-dias_noviembre;	 	 	
+	switch (dia_nacimiento)
+	{
+	case 1: total4= total3+29; break;case 2: total4=total3+28; break;case 3: total4=total3+27; break;case 4: total4=total3+26; break;
+	case 5: total4=total3+25; break;case 6: total4= total3+24; break;case 7: total4=total3+23; break;case 8: total4=total3+22; break;
+	case 9: total4=total3+21; break;case 10: total4=total3+20; break;case 11: total4=total3+19; break;case 12: total4=total3+18; break;
+	case 13: total4=total3+17; break;case 14: total4=total3+16; break;case 15: total4=total3+15; break;case 16: total4=total3+14; break;
+    case 17: total4=total3+13; break;case 18: total4=total3+12; break;case 19: total4=total3+11; break;case 20: total4=total3+10; break;
+	case 21: total4=total3+9; break;case 22: total4=total3+8; break;case 23: total4=total3+7; break;case 24: total4=total3+6; break;
+	case 25: total4=total3+5; break;case 26: total4=total3+4; break;case 27: total4=total3+3; break;case 28: total4=total3+2; break;
+	case 29: total4=total3+1; break;case 30: total4=total3+0; break;
+	} 
+	break;
+	
+	case 12: //31
+	total3 = total2-dias_enero-dias_febrero-dias_abril-dias_marzo-dias_mayo-dias_junio-dias_julio-dias_agosto-dias_setiembre-dias_octubre-dias_noviembre-dias_diciembre;		
+		     switch (dia_nacimiento)
+	{
+	case 1: total4=total3+30; break;case 2: total4=total3+29; break;case 3: total4=total3+28; break;case 4: total4=total3+27; break;
+	case 5: total4=total3+26; break;case 6: total4=total3+25; break;case 7: total4=total3+24; break;case 8: total4=total3+23; break;
+	case 9: total4=total3+22; break;case 10: total4=total3+21; break;case 11: total4=total3+20; break;case 12: total4=total3+19; break;
+	case 13: total4=total3+18; break;case 14: total4=total3+17; break;case 15: total4=total3+16; break;case 16: total4=total3+15; break;
+	case 17: total4=total3+14; break;case 18: total4=total3+13; break;case 19: total4=total3+12; break;case 20: total4=total3+11; break;
+	case 21: total4=total3+10; break;case 22: total4=total3+9; break;case 23: total4=total3+8; break;case 24: total4=total3+7; break;
+	case 25: total4=total3+6; break;case 26: total4=total3+5; break;case 27: total4=total3+4; break;case 28: total4=total3+3; break;
+	case 29: total4=total3+2; break;case 30: total4=total3+1; break;case 31: total4=total3+0; break;
+	}
+	break;
+	
+	
+	}
+//cout << "Realizando Calculos "<< total3<< "\n\n"<< endl;	
+//cout << "Realizando Calculos "<< total4<< "\n\n\n"<< endl;
+calculos3();
+
+}
+
+void calculos3()
+{
+	total_biciesto1 = ano_actual - ano_nacimiento;	
+	total_biciesto2 = total_biciesto1/4;
+	
+	cout << "\nAnos Biciestos entre "<<ano_nacimiento<<" y "<<ano_actual<<" ,total: "<< total_biciesto2<< "\n\n"<< endl;
+	cout << "HAS VIVIDO UN TOTAL DE : "<< anos_restados+total_biciesto2<< " DIAS\n\n\n"<< endl;
+}
